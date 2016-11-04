@@ -10,13 +10,11 @@ function Order() {
   this.address;
   this.phone = "";
 }
-
 function Address() {
   this.street = "";
   this.apt = "";
   this.zip = "";
 }
-
 Pizza.prototype.complete = function(size, toppings) {
   this.size=size;
   this.toppings= toppings;
@@ -29,17 +27,17 @@ Pizza.prototype.calculatePrice = function () {
   }else {
     this.price = 13 + this.toppings.length * 1.25;;
   }
-};
+}
 Order.prototype.addPie = function (pie) {
   this.pies.push(pie);
   this.price = 0;
   for (var i = 0; i<this.pies.length; i++){
     this.price += this.pies[i].price;
   }
-};
+}
 Order.prototype.deliverTo = function () {
   this.address
-};
+}
 
 var order = new Order;
 
@@ -81,7 +79,6 @@ var validateAddress = function() {
   }
 }
 $(document).ready(function(){
-
   $("#completePie").click(function(event) {
     event.preventDefault();
     var pizza = new Pizza;

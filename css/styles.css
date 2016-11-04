@@ -15,13 +15,13 @@ button {
   font-size: 10pt;
   font-weight: normal;
 }
+.controlButtons {
+  margin: 10px 0px 10px 0px;
+}
 #orderForm {
   border: solid thin gray;
   border-radius: 8px;
   padding-bottom: 20px;
-}
-.controlButtons {
-  margin: 10px 0px 10px 0px;
 }
 #summary {
   border: solid thin black;
@@ -30,10 +30,6 @@ button {
 }
 #summary p {
   font-weight: bold;
-}
-.disable {
-  background-color: lightgray;
-  display: none;
 }
 #addressInput {
   display: none;

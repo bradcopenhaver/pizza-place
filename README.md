@@ -44,7 +44,7 @@ Name, address, and phone input fields will accept any input.
 
 ## Support and contact details
 
-If you have questions or comments, contact the authors at bradcopenhaver@gmail.com
+If you have questions or comments, contact the author at bradcopenhaver@gmail.com
 
 ## Technologies Used
 
