@@ -19,3 +19,8 @@ button {
 .controlButtons {
   margin: 10px 0px 10px 0px;
 }
+.summary {
+  border: solid thin black;
+  border-radius: 8px;
+  min-height: 340px;
+}

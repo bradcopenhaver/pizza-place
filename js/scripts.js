@@ -31,13 +31,11 @@ Pizza.prototype.calculatePrice = function () {
 };
 Order.prototype.addPie = function (pie) {
   this.pies.push(pie);
-};
-Order.prototype.calculatePrice = function() {
   this.price = 0;
   for (var i = 0; i<this.pies.length; i++){
     this.price += this.pies[i].price;
-  };
-}
+  }
+};
 Order.prototype.deliverTo = function () {
   this.address
 };
@@ -48,6 +46,19 @@ var order = new Order;
 
 
 ///UI logic below here
+
+var updateSummary = function() {
+  $("#summary").html("<h5>Order Summary:</h5>");
+  for (var i=0; i<order.pies.length; i++) {
+    $("#summary").append("<p>Pie "+(i+1)+": " + order.pies[i].size + ": $"+order.pies[i].price +"</p><ul id='pie'" + i +">")
+    for (var j=0; j<order.pies[i].toppings.length; j++){
+      $("#summary").append("<li>"+order.pies[i].toppings[j]+"</li>")
+    }
+    $("#summary").append("</ul>")
+  }
+}
+
+
 
 $(document).ready(function(){
 
@@ -64,7 +75,7 @@ $(document).ready(function(){
     pizza.complete(size, toppings);
     pizza.calculatePrice();
     order.addPie(pizza);
-    order.calculatePrice();
+    updateSummary();
     console.log(pizza);
     console.log(order);
   });
