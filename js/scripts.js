@@ -3,13 +3,12 @@ function Pizza() {
   this.toppings = [];
   this.price = 0;
 }
-
-
-// function Order {
-//   this.pizzas = [];
-//   this.name = "";
-//   this.address;
-// }
+function Order() {
+  this.pies = [];
+  this.price = 0;
+  this.name = "";
+  this.address;
+}
 //
 // function Address {
 //   this.street = "";
@@ -30,7 +29,18 @@ Pizza.prototype.calculatePrice = function () {
     this.price = 13 + this.toppings.length * 1.25;;
   }
 };
+Order.prototype.addPie = function (pie) {
+  this.pies.push(pie);
+};
+Order.prototype.calculatePrice = function() {
+  debugger;
+  this.price = 0;
+  for (var i = 0; i<this.pies.length; i++){
+    this.price += this.pies[i].price;
+  };
+}
 
+var order = new Order;
 
 
 
@@ -38,6 +48,7 @@ Pizza.prototype.calculatePrice = function () {
 ///UI logic below here
 
 $(document).ready(function(){
+
   $("form").submit(function(event) {
     event.preventDefault();
     var pizza = new Pizza;
@@ -50,7 +61,10 @@ $(document).ready(function(){
 
     pizza.complete(size, toppings);
     pizza.calculatePrice();
+    order.addPie(pizza);
+    order.calculatePrice();
     console.log(pizza);
+    console.log(order);
   })
 
 });
