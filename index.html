@@ -14,7 +14,7 @@
   <body>
     <div class="container">
       <div class="row">
-        <form>
+        <form class="newPie">
           <label>
             <input type="radio" name="size" value="small" checked>
             Small: 10-inch
@@ -51,6 +51,22 @@
           </div>
 
           <button type="submit">Complete pie</button>
+        </form>
+      </div><!--row-->
+      <div class="row">
+        <form id="addressInput">
+          <div class="form-group">
+            <label>Your name:</label>
+            <input id="nameInput">
+            <label>Street address:</label>
+            <input id="streetInput">
+            <label>Apt #</label>
+            <input id="aptInput">
+            <label>ZIP Code</label>
+            <input id="zipInput">
+
+            <button type="submit">Send my pizza</button>
+          </div>
         </form>
       </div><!--row-->
     </div><!--container-->

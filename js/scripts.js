@@ -9,12 +9,12 @@ function Order() {
   this.name = "";
   this.address;
 }
-//
-// function Address {
-//   this.street = "";
-//   this.apt = "";
-//   this.zip = "";
-// }
+
+function Address() {
+  this.street = "";
+  this.apt = "";
+  this.zip = "";
+}
 
 Pizza.prototype.complete = function(size, toppings) {
   this.size=size;
@@ -33,12 +33,14 @@ Order.prototype.addPie = function (pie) {
   this.pies.push(pie);
 };
 Order.prototype.calculatePrice = function() {
-  debugger;
   this.price = 0;
   for (var i = 0; i<this.pies.length; i++){
     this.price += this.pies[i].price;
   };
 }
+Order.prototype.deliverTo = function () {
+  this.address
+};
 
 var order = new Order;
 
@@ -49,7 +51,7 @@ var order = new Order;
 
 $(document).ready(function(){
 
-  $("form").submit(function(event) {
+  $(".newPie").submit(function(event) {
     event.preventDefault();
     var pizza = new Pizza;
     var size = $("input:radio[name=size]:checked").val();
@@ -65,6 +67,19 @@ $(document).ready(function(){
     order.calculatePrice();
     console.log(pizza);
     console.log(order);
-  })
+  });
 
+  $("#addressInput").submit(function(event){
+    event.preventDefault();
+
+    var address = new Address;
+
+    address.street = $("#streetInput").val();
+    address.apt = $("#aptInput").val();
+    address.zip = $("#zipInput").val();
+
+    order.address = address;
+    order.name = $("#nameInput").val();
+
+  });
 });
