@@ -75,7 +75,11 @@ var confirmationMessage = function() {
   $("#confirmPhone").text(order.phone);
   $("#confirmPrice").text(order.price.toFixed(2));
 }
-
+var validateAddress = function() {
+  if (order.address.street && order.phone && order.name){
+    return 1;
+  }
+}
 $(document).ready(function(){
 
   $("#completePie").click(function(event) {
@@ -124,8 +128,14 @@ $(document).ready(function(){
     order.name = $("#nameInput").val();
     order.phone = $("#phoneInput").val();
 
-    $("#addressInput").slideUp();
-    $("#orderConfirmation").slideDown();
-    confirmationMessage();
+    var validate = validateAddress();
+    if (validate){
+      $("#invalidAddress").hide();
+      $("#addressInput").slideUp();
+      $("#orderConfirmation").slideDown();
+      confirmationMessage();
+    } else {
+      $("#invalidAddress").show();
+    }
   });
 });

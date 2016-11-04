@@ -27,8 +27,6 @@ button {
 #summary p {
   font-weight: bold;
 }
-#summary ul {
-}
 .disable {
   background-color: lightgray;
   display: none;
@@ -41,4 +39,8 @@ button {
 }
 #orderConfirmation {
   display: none;
+}
+#invalidAddress {
+  display: none;
+  color: crimson;
 }

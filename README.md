@@ -35,6 +35,7 @@ Source code available at https://github.com/bradcopenhaver/pizza-place
 
 ## Known Bugs
 
+Name, address, and phone input fields will accept any input.
 
 ## Support and contact details
 
