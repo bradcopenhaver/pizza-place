@@ -27,6 +27,8 @@ button {
 #summary p {
   font-weight: bold;
 }
+#summary ul {
+}
 .disable {
   background-color: lightgray;
   display: none;
@@ -35,5 +37,8 @@ button {
   display: none;
 }
 #controlButtons {
+  display: none;
+}
+#orderConfirmation {
   display: none;
 }

@@ -67,15 +67,15 @@
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-danger" id="clearToppings">Clear toppings</button>
-                <button class="btn btn-primary" id="completePie">Complete pie</button>
+                <button class="btn btn-warning" id="clearToppings">Clear toppings</button>
+                <button class="btn btn-danger" id="completePie">Complete pie</button>
               </form>
             </div>
           </div><!--row orderForm-->
           <div class="row">
             <div class="col-md-12" id="controlButtons">
-              <button class="btn" id="addAnother">Add another pie</button>
-              <button class="btn" id="orderComplete">Complete my order</button>
+              <button class="btn btn-primary" id="addAnother">Add another pie</button>
+              <button class="btn btn-danger" id="orderComplete">Complete my order</button>
             </div>
           </div><!--row-->
           <div class="row">
@@ -88,17 +88,26 @@
                   <input id="streetInput" type="text">
                   <label for="aptInput">Apt #</label>
                   <input id="aptInput" type="text"><br>
-                  <label for="zipInput" >ZIP Code</label>
+                  <label for="zipInput">ZIP Code</label>
                   <input id="zipInput" type="text"><br>
+                  <label for="phoneInput">Phone #</label>
+                  <input id="phoneInput" type="text">
 
-                  <button class="btn" id="addressSubmit">Send my pizza</button>
+                  <button class="btn btn-danger" id="addressSubmit">Send my pizza</button>
                 </div>
               </form>
             </div>
           </div><!--row-->
+          <div class="row">
+            <div class="col-md-12" id="orderConfirmation">
+              <h1>Order Confirmed!</h1>
+              <h3><span id="confirmName"></span> will be prepared fresh and delivered to <span id="confirmAddress"></span> as soon as possible. Our driver will call <span id="confirmPhone"></span> when they arrive.</h3>
+              <h4>$<span id="confirmPrice"></span> is due on delivery. Don't forget to tip your driver!</h4>
+            </div>
+          </div><!--row-->
         </div><!--col-->
         <div class="col-md-3" id="summary">
-          <h5>Order Summary:</h5>
+          <h4>Order Summary:</h4>
         </div>
       </div><!--row-->
     </div><!--container-->

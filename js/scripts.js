@@ -8,6 +8,7 @@ function Order() {
   this.price = 0;
   this.name = "";
   this.address;
+  this.phone = "";
 }
 
 function Address() {
@@ -42,26 +43,37 @@ Order.prototype.deliverTo = function () {
 
 var order = new Order;
 
-
-
-
 ///UI logic below here
 
 var updateSummary = function() {
-  $("#summary").html("<h5>Order Summary:</h5>");
+  $("#summary").html("<h4>Order Summary:</h4>");
   for (var i=0; i<order.pies.length; i++) {
-    $("#summary").append("<p>Pie "+(i+1)+": " + order.pies[i].size + ": $"+order.pies[i].price +"</p><ul id='pie'" + i +">")
+    $("#summary").append("<p>Pie "+(i+1)+": " + order.pies[i].size + ": $"+order.pies[i].price.toFixed(2) +"</p><ul id='pie'" + i +">")
     for (var j=0; j<order.pies[i].toppings.length; j++){
       $("#summary").append("<li>"+order.pies[i].toppings[j]+"</li>")
     }
     $("#summary").append("</ul>");
   }
-  $("#summary").append("<p>Total price: $"+order.price)
+  $("#summary").append("<p>Total price: $"+order.price.toFixed(2));
 }
 var clearToppings = function() {
   $("input:checkbox[name=toppings]:checked").each(function(){
     this.checked = false;
   });
+}
+var confirmationMessage = function() {
+  if (order.pies.length>1) {
+    $("#confirmName").text(order.name +"'s pies ");
+  } else {
+    $("#confirmName").text(order.name +"'s pie ");
+  }
+  if (order.address.apt) {
+    $("#confirmAddress").text(order.address.street + " Apt # " + order.address.apt);
+  } else {
+    $("#confirmAddress").text(order.address.street);
+  }
+  $("#confirmPhone").text(order.phone);
+  $("#confirmPrice").text(order.price.toFixed(2));
 }
 
 $(document).ready(function(){
@@ -81,8 +93,6 @@ $(document).ready(function(){
     updateSummary();
     $("#controlButtons").slideDown();
     $("#orderForm").slideUp();
-    console.log(pizza);
-    console.log(order);
   });
 
   $("#clearToppings").click(function(event){
@@ -112,6 +122,10 @@ $(document).ready(function(){
 
     order.address = address;
     order.name = $("#nameInput").val();
+    order.phone = $("#phoneInput").val();
 
+    $("#addressInput").slideUp();
+    $("#orderConfirmation").slideDown();
+    confirmationMessage();
   });
 });
