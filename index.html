@@ -13,61 +13,91 @@
 
   <body>
     <div class="container">
-      <div class="row">
-        <form class="newPie">
-          <label>
-            <input type="radio" name="size" value="small" checked>
-            Small: 10-inch
-          </label>
-          <label>
-            <input type="radio" name="size" value="medium">
-            Med: 13-inch
-          </label>
-          <label>
-            <input type="radio" name="size" value="large" checked>
-            Large: 16-inch
-          </label>
+      <div class="row heading">
+        <div class="col-md-12">
+          <h1>Local Pizza Delivery Service</h1>
+        </div>
+      </div>
+      <div class="row orderForm">
+        <div class="col-md-9">
+          <h3>Customize your pizza pie:</h3>
+          <form class="newPie">
+            <label class="sizeRadio">
+              <input type="radio" name="size" value="small">
+              Small: 10-inch
+            </label>
 
-          <div class="form-group">
-            <p>Choose toppings:</p>
-            <input type="checkbox" name="toppings" value="pepperoni">pepperoni<br>
-            <input type="checkbox" name="toppings" value="sausage">sausage<br>
-            <input type="checkbox" name="toppings" value="bacon">bacon<br>
-            <input type="checkbox" name="toppings" value="shredded chicken">shredded chicken<br>
-            <input type="checkbox" name="toppings" value="ground beef">ground beef<br>
-            <input type="checkbox" name="toppings" value="ham">ham<br>
-            <input type="checkbox" name="toppings" value="extra cheese">extra cheese<br>
-            <input type="checkbox" name="toppings" value="black olives">black olives<br>
-            <input type="checkbox" name="toppings" value="onion">onion<br>
-            <input type="checkbox" name="toppings" value="roasted peppers">roasted peppers<br>
-            <input type="checkbox" name="toppings" value="banana peppers">banana peppers<br>
-            <input type="checkbox" name="toppings" value="minced garlic">minced garlic<br>
-            <input type="checkbox" name="toppings" value="roasted garlic">roasted garlic<br>
-            <input type="checkbox" name="toppings" value="artichoke hearts">artichoke hearts<br>
-            <input type="checkbox" name="toppings" value="feta cheese">feta cheese<br>
-            <input type="checkbox" name="toppings" value="pineapple">pineapple<br>
-            <input type="checkbox" name="toppings" value="broccoli">broccoli<br>
-            <input type="checkbox" name="toppings" value="mushrooms">mushrooms<br>
-          </div>
+            <label class="sizeRadio">
+              <input type="radio" name="size" value="medium">
+              Med: 13-inch
+            </label>
+            <label class="sizeRadio">
+              <input type="radio" name="size" value="large" checked>
+              Large: 16-inch
+            </label>
 
-          <button type="submit">Complete pie</button>
-        </form>
+            <div class="form-group">
+              <h4>Choose toppings:</h4>
+              <div class="row">
+                <div class="col-md-4">
+                  <input type="checkbox" name="toppings" value="pepperoni">pepperoni<br>
+                  <input type="checkbox" name="toppings" value="sausage">sausage<br>
+                  <input type="checkbox" name="toppings" value="bacon">bacon<br>
+                  <input type="checkbox" name="toppings" value="shredded chicken">shredded chicken<br>
+                  <input type="checkbox" name="toppings" value="ground beef">ground beef<br>
+                  <input type="checkbox" name="toppings" value="ham">ham
+                </div>
+                <div class="col-md-4">
+                  <input type="checkbox" name="toppings" value="extra cheese">extra cheese<br>
+                  <input type="checkbox" name="toppings" value="black olives">black olives<br>
+                  <input type="checkbox" name="toppings" value="onion">onion<br>
+                  <input type="checkbox" name="toppings" value="roasted peppers">roasted peppers<br>
+                  <input type="checkbox" name="toppings" value="banana peppers">banana peppers<br>
+                  <input type="checkbox" name="toppings" value="minced garlic">minced garlic
+                </div>
+                <div class="col-md-4">
+                  <input type="checkbox" name="toppings" value="roasted garlic">roasted garlic<br>
+                  <input type="checkbox" name="toppings" value="artichoke hearts">artichoke hearts<br>
+                  <input type="checkbox" name="toppings" value="feta cheese">feta cheese<br>
+                  <input type="checkbox" name="toppings" value="pineapple">pineapple<br>
+                  <input type="checkbox" name="toppings" value="broccoli">broccoli<br>
+                  <input type="checkbox" name="toppings" value="mushrooms">mushrooms
+                </div>
+              </div>
+            </div>
+
+            <button class="btn" type="submit">Complete pie</button>
+          </form>
+        </div>
+        <div class="col-md-3 summary">
+          <h5>Order Summary:</h5>
+          <ul class="pieSummary">
+          </ul>
+        </div>
       </div><!--row-->
       <div class="row">
-        <form id="addressInput">
-          <div class="form-group">
-            <label>Your name:</label>
-            <input id="nameInput">
-            <label>Street address:</label>
-            <input id="streetInput">
-            <label>Apt #</label>
-            <input id="aptInput">
-            <label>ZIP Code</label>
-            <input id="zipInput">
+        <div class="col-md-9 controlButtons">
+          <button class="btn">Add another pie</button>
+          <button class="btn">Complete my order</button>
+        </div>
+      </div><!--row-->
+      <div class="row">
+        <div class="col-md-9">
+          <form id="addressInput">
+            <div class="form-group">
+              <label for="nameInput">Your name:</label>
+              <input id="nameInput" type="text"><br>
+              <label for="streetInput">Street address:</label>
+              <input id="streetInput" type="text">
+              <label for="aptInput">Apt #</label>
+              <input id="aptInput" type="text"><br>
+              <label for="zipInput" >ZIP Code</label>
+              <input id="zipInput" type="text">
 
-            <button type="submit">Send my pizza</button>
-          </div>
-        </form>
+              <button class="btn" type="submit">Send my pizza</button>
+            </div>
+          </form>
+        </div>
       </div><!--row-->
     </div><!--container-->
   </body>

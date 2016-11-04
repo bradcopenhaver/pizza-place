@@ -1,0 +1,21 @@
+h1 {
+  text-align: center;
+}
+button {
+  margin: 10px;
+}
+.sizeRadio {
+  font-size: 12pt;
+  margin: 5px 20px 5px 0px;
+  padding: 5px;
+  border: solid thin black;
+  border-radius: 5px;
+}
+.orderForm .col-md-9 {
+  border: solid thin gray;
+  border-radius: 8px;
+  padding-bottom: 20px;
+}
+.controlButtons {
+  margin: 10px 0px 10px 0px;
+}
