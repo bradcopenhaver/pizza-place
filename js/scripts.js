@@ -58,10 +58,11 @@ var updateSummary = function() {
   }
   $("#summary").append("<p>Total price: $"+order.price)
 }
-var showAddress = function() {
-  $("#addressInput").show();
+var clearToppings = function() {
+  $("input:checkbox[name=toppings]:checked").each(function(){
+    this.checked = false;
+  });
 }
-
 
 $(document).ready(function(){
 
@@ -78,20 +79,26 @@ $(document).ready(function(){
     pizza.calculatePrice();
     order.addPie(pizza);
     updateSummary();
+    $("#controlButtons").slideDown();
+    $("#orderForm").slideUp();
     console.log(pizza);
     console.log(order);
   });
 
   $("#clearToppings").click(function(event){
     event.preventDefault();
-    $("input:checkbox[name=toppings]:checked").each(function(){
-      this.checked = false;
-    });
+    clearToppings();
+  });
+
+  $("#addAnother").click(function(){
+    clearToppings();
+    $("#orderForm").slideDown();
+    $("#controlButtons").slideUp();
   });
 
   $("#orderComplete").click(function(){
-    $("#orderForm").addClass("disable");
-    showAddress();
+    $("#controlButtons").slideUp();
+    $("#addressInput").slideDown();
   });
 
   $("#addressSubmit").click(function(event){

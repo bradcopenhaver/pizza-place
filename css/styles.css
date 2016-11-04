@@ -11,7 +11,7 @@ button {
   border: solid thin black;
   border-radius: 5px;
 }
-.orderForm {
+#orderForm {
   border: solid thin gray;
   border-radius: 8px;
   padding-bottom: 20px;
@@ -19,15 +19,21 @@ button {
 .controlButtons {
   margin: 10px 0px 10px 0px;
 }
-.summary {
+#summary {
   border: solid thin black;
   border-radius: 8px;
   min-height: 340px;
+}
+#summary p {
+  font-weight: bold;
 }
 .disable {
   background-color: lightgray;
   display: none;
 }
 #addressInput {
+  display: none;
+}
+#controlButtons {
   display: none;
 }
