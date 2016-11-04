@@ -54,15 +54,18 @@ var updateSummary = function() {
     for (var j=0; j<order.pies[i].toppings.length; j++){
       $("#summary").append("<li>"+order.pies[i].toppings[j]+"</li>")
     }
-    $("#summary").append("</ul>")
+    $("#summary").append("</ul>");
   }
+  $("#summary").append("<p>Total price: $"+order.price)
 }
-
+var showAddress = function() {
+  $("#addressInput").show();
+}
 
 
 $(document).ready(function(){
 
-  $(".newPie").submit(function(event) {
+  $("#completePie").click(function(event) {
     event.preventDefault();
     var pizza = new Pizza;
     var size = $("input:radio[name=size]:checked").val();
@@ -71,7 +74,6 @@ $(document).ready(function(){
     $("input:checkbox[name=toppings]:checked").each(function(){
       toppings.push($(this).val());
     });
-
     pizza.complete(size, toppings);
     pizza.calculatePrice();
     order.addPie(pizza);
@@ -80,7 +82,19 @@ $(document).ready(function(){
     console.log(order);
   });
 
-  $("#addressInput").submit(function(event){
+  $("#clearToppings").click(function(event){
+    event.preventDefault();
+    $("input:checkbox[name=toppings]:checked").each(function(){
+      this.checked = false;
+    });
+  });
+
+  $("#orderComplete").click(function(){
+    $("#orderForm").addClass("disable");
+    showAddress();
+  });
+
+  $("#addressSubmit").click(function(event){
     event.preventDefault();
 
     var address = new Address;
