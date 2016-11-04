@@ -16,13 +16,13 @@ _This program will..._
  * Input: pepperoni, extra cheese
  * Output: {10", pepperoni, extra cheese}
 
+* Calculate a price for complete pizza.
+ * Input: 10": pepperoni, extra cheese
+ * Output: 10": $12.95
+
 * Keep track of multiple pizzas in the same order.
   * Input: 10": pepperoni, extra cheese, 12": artichoke, olives
   * Output: {10", pepperoni, extra cheese}, {12", artichoke, olives}
-
-* Display a price per pizza and total price.
-  * Input: 10": pepperoni, extra cheese, 12": artichoke, olives
-  * Output: 10": $12.95, 12": $15.95
 
 * Accept a delivery address for each order.
  * Input: Delivery: 123 Street, Town, State, ZIP

@@ -1,6 +1,7 @@
 function Pizza() {
   this.size = "large";
   this.toppings = [];
+  this.price = 0;
 }
 
 
@@ -20,7 +21,15 @@ Pizza.prototype.complete = function(size, toppings) {
   this.size=size;
   this.toppings= toppings;
 }
-
+Pizza.prototype.calculatePrice = function () {
+  if (this.size === "small") {
+    this.price = 8 + this.toppings.length * 0.75;
+  }else if (this.size === "medium") {
+    this.price = 10 + this.toppings.length;
+  }else {
+    this.price = 13 + this.toppings.length * 1.25;;
+  }
+};
 
 
 
@@ -40,6 +49,7 @@ $(document).ready(function(){
     });
 
     pizza.complete(size, toppings);
+    pizza.calculatePrice();
     console.log(pizza);
   })
 
