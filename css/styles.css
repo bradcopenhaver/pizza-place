@@ -11,6 +11,10 @@ button {
   border: solid thin black;
   border-radius: 5px;
 }
+.buttonSubtext {
+  font-size: 10pt;
+  font-weight: normal;
+}
 #orderForm {
   border: solid thin gray;
   border-radius: 8px;
@@ -22,7 +26,7 @@ button {
 #summary {
   border: solid thin black;
   border-radius: 8px;
-  min-height: 340px;
+  min-height: 361px;
 }
 #summary p {
   font-weight: bold;

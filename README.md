@@ -6,7 +6,9 @@
 
 ## Description
 
-Specifications
+This is a simple pizza-ordering application. The user chooses pizza size and toppings from a list of available choices. When a pizza is complete, it is added to the total order and the user has the option to add another pizza or check out. On checkout, the user is prompted to supply a name, address, and phone number, which is then associated with the order. When the name, address, and phone number fields have any values, the user can submit the order and a confirmation message is shown. Otherwise, the user is prompted to fill in those fields.
+
+###Specifications
 _This program will..._
 * Remember what size pizza the user orders.
  * Input: 10"
@@ -28,6 +30,9 @@ _This program will..._
  * Input: Delivery: 123 Street, Town, State, ZIP
  * Output: 10": pepperoni, extra cheese, $12.95, deliver to 123 Street, Town, State, ZIP
 
+###Possible future version features
+
+* Allow users to edit any part of their order at any point before final submission.
 
 ## Setup/Installation Requirements
 
